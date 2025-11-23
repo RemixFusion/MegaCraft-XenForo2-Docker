@@ -6,12 +6,13 @@ services:
       context: ./
       dockerfile: nginx.dockerfile
     ports:
-      - "8023:80" # HTTP Port
-      - "9023:443" # HTTPS Port
+      - "8003:80" # HTTP Port
+      - "9003:443" # HTTPS Port
     volumes_from:
       - php
     volumes:
       - ./.config/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./.config/nginx/certs:/etc/nginx/certs:ro
       - ./.data/nginx:/var/log/nginx
     links:
       - php
@@ -23,7 +24,7 @@ services:
   php:
     build:
       context: ./
-      dockerfile: php80.dockerfile # availables php72.dockerfile php80.dockerfile php81.dockerfile
+      dockerfile: php82.dockerfile # availables php72.dockerfile php80.dockerfile php81.dockerfile
     volumes:
       - ./xenforo:/var/www/html
       - ./addons:/var/www/html/src/addons
