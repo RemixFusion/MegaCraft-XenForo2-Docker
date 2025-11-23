@@ -16,6 +16,8 @@ services:
       - ./.data/nginx:/var/log/nginx
     links:
       - php
+    networks:
+      - xenforo
   certbot:
     image: certbot/certbot
     volumes:
@@ -36,13 +38,18 @@ services:
       - ./certbot/conf/:/etc/nginx/ssl/:ro
     links:
       - mariadb
+    networks:
+      - xenforo
     env_file:
       - .env
   mariadb:
-    image: mariadb:10.6.3
+    image: mariadb:10.11
     volumes:
       - ./.data/mariadb:/var/lib/mysql
+    networks:
+      - xenforo
     env_file:
       - .env
-    ports:
-      - "33069:3306" # change port 33069 to any other port
+networks:
+  xenforo:
+    driver: bridge
