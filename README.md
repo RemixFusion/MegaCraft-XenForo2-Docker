@@ -2,13 +2,13 @@
 #### Changes by RemixF with SSL
 
 This is basic docker setup for XenForo 2. Changes by RemixF include:
-- Remapped HTTP port to 8023 (HTTP)
-- Added port 9023 (HTTPS) for SSL
+- Remapped HTTP port to 8003 (HTTP)
+- Added port 9003 (HTTPS) for SSL
 - Increased file_upload_size in Nginx to 128MB (Supports CloudFlare 100MB limit)
 
 Installed:
 
-- PHP (8.0 Default) 7.2.x, 8.0.x, 8.1.x (Easily switch between php versions)
+- PHP (8.2 Default) 7.2.x, 8.0.x, 8.1.x, 8.2.x (Easily switch between PHP versions)
 
   - Mysqli
   - GD
@@ -17,7 +17,7 @@ Installed:
   - GMP
   - Zip
 
-- Nginx 1.19.6
+- Nginx: latest
 - Mariadb: 10.6.3
 
 ## Structure
@@ -33,7 +33,7 @@ Put XenForo source code to folder `/xenforo`. Any new add-ons will be stored in 
 
 ### Installation
 
-This requires open port `8023` and `9023` make sure the port was allowed in your environment. You can change the port to any other
+This requires open port `8003` and `9003` make sure the port was allowed in your environment. You can change the port to any other
 by editing the file `docker-compose.yml`
 
 Clone this repository to your computer then run
