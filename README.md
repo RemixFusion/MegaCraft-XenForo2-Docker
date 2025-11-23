@@ -60,7 +60,7 @@ To store add-on directories correctly:
 
 ## config.php
 
-Update your XenForo `config.php` with these values. Replace MARIADB_USER, MARIADB_PASSWORD, and MARIADB_DATABASE.
+Update your XenForo `config.php` with these values. Replace MARIADB_PASSWORD.
 
 ```php
 
