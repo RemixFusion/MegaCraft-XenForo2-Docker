@@ -20,7 +20,7 @@ Installed:
   - Zip
 
 - Nginx: latest
-- MariaDB: 10.6.3
+- MariaDB: 10.11 (latest)
 
 ## Structure
 
