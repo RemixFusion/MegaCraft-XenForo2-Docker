@@ -1,4 +1,4 @@
-FROM nginx:1.19.6
+FROM nginx:stable
 
 RUN mkdir -p /var/www/html
 
